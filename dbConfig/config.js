@@ -10,4 +10,14 @@ console.log('connection successfull')
 
    }
 }
-module.exports=myConnection
+const trydisconnect=async()=>{
+    try{
+        
+    await mongoose.disconnect()
+    console.log('disconnected from database')
+    }
+    catch(err){
+        console.log(err.stack)
+    }
+}
+module.exports={myConnection,trydisconnect}
