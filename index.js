@@ -1,5 +1,6 @@
 const {Command}=require('commander')
 const myAdder = require('./commands/dbConnectandAdd')
+const read = require('./commands/readGoals')
 const program =new Command()
 program
 .name('to')
@@ -7,9 +8,14 @@ program
 
 program
 .command('add')
-.description('Adds new task to the db')
+.description('Adds new goals')
 .action(( )=>{
     myAdder()
  })
-
+ program
+ .command('read')
+ .description('read all goals')
+.action(()=>{
+    read()
+})
 program.parse(process.argv)

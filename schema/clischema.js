@@ -1,5 +1,9 @@
 const mongoose=require('mongoose')
 const taskSchema=new mongoose.Schema({
+  goalId:{
+    type:Number
+
+  },
     name:{
         type:String
     },
